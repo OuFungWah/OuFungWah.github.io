@@ -1,0 +1,16 @@
+@startuml
+' 只读的，不可变的字符串接口
+interface CharSequence <<只读字符串接口>>
+' 文案已经被标记
+interface Spanned <<被标记内容接口>> extends CharSequence
+' 文案可被标记
+interface Spannable <<可被标记内容接口>> extends Spanned
+' 文案内容可变化，文案可被标记，标记可能因文案内容变化而变化
+interface Editable <<可编辑可被标记内容接口>> extends Spannable
+class String <<不可变字符串>> implements CharSequence
+class PrecomputedText <<预计算/渲染内容>> implements Spannable
+class SpannableString <<可标记文本不变内容>> implements Spannable
+class SpannableStringBuilder <<文字与标记均可变内容>> implements Spannable, Editable
+class SpannedString <<已标记文本不变内容>> implements Spanned
+class PrecomputedTextCompat <<预计算/渲染内容兼容版>> implements Spannable
+@enduml
