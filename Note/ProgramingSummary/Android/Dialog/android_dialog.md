@@ -40,6 +40,8 @@ DialogFragment 本质上就是 Fragment，使用 Fragment 的各种生命周期�
             * `mDialog.show();`
         * onResume 无特殊处理
 
+* 
+
 * DialogFragment 生命周期
 
 ``` kotlin
